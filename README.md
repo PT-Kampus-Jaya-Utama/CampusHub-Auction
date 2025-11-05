@@ -287,34 +287,6 @@ Maung/
 - Nginx (frontend reverse proxy)
 - Multi-stage Docker builds
 
-## Key Improvements from Original
-
-1. **Modern Language**: Migrated from Java to TypeScript/Node.js
-2. **Consistent Framework**: NestJS across all backend services
-3. **Updated Frontend**: Angular → React 18 with modern hooks
-4. **Blue Theme**: Custom Material-UI theme as requested
-5. **Containerization**: Full Docker support with compose
-6. **Type Safety**: TypeScript throughout entire stack
-7. **Auth Migration**: MySQL → Redis for authentication
-8. **Best Practices**: Dependency injection, DTOs, validation
-9. **API Docs**: Swagger integration
-10. **No H2**: Removed as requested
-
-## Production Considerations
-
-Before deploying to production:
-
-1. **Environment Variables**: Change all default passwords and secrets
-2. **CORS**: Update `CORS_ORIGIN` to your production domain
-3. **Database Volumes**: Ensure data persistence configuration
-4. **SSL/TLS**: Add HTTPS certificates (Let's Encrypt recommended)
-5. **Monitoring**: Add Prometheus/Grafana for metrics
-6. **Logging**: Centralize logs (ELK stack recommended)
-7. **Scaling**: Consider Kubernetes for orchestration
-8. **API Gateway**: Add Kong/NGINX for centralized routing
-9. **Service Discovery**: Implement if not using container networking
-10. **Backup Strategy**: Regular database backups
-
 ## Troubleshooting
 
 ### Port Conflicts
@@ -332,14 +304,10 @@ Kafka requires Zookeeper. Ensure Zookeeper is healthy first.
 ### Neo4j Connection Failed
 Default credentials: `neo4j/799124`. Change if modified.
 
-## License
-
-MIT
-
 ## Support
 
 For issues or questions, please open an issue in the repository.
 
 ---
 
-**Built with ❤️ using modern microservices architecture**
+**Built with ❤️ by PT Kampus Jaya Utama**
