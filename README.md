@@ -47,8 +47,8 @@ This platform follows a microservices architecture with **6 independent services
 ### 1. Clone the Repository
 
 ```bash
-git clone <repository-url>
-cd Maung
+git clone https://github.com/PT-Kampus-Jaya-Utama/CampusHub-Auction.git
+cd CampusHub-Auction
 ```
 
 ### 2. Set Up Environment Variables
