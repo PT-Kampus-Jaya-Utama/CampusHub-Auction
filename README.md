@@ -21,13 +21,13 @@ This platform follows a microservices architecture with **6 independent services
 
 ### Backend Microservices
 
-| Service | Technology | Database | Port | Description |
+| Service | Framework | Database | Port | Description |
 |---------|-----------|----------|------|-------------|
-| **Auth Service** | NestJS + Redis | Redis | 3001 | JWT authentication & user registration |
-| **Registration Service** | NestJS + MongoDB + Kafka | MongoDB | 3002 | User & rent item management with event streaming |
-| **Search Service** | NestJS + MongoDB | MongoDB | 3003 | Product search with Swagger documentation |
-| **Bidding Service** | NestJS + Redis | Redis | 3004 | Real-time bidding with validation logic |
-| **Recommendation Service** | NestJS + Neo4j | Neo4j | 3005 | Graph-based product recommendations |
+| **Auth Service** | NestJS | Redis | 3001 | JWT authentication & user registration |
+| **Registration Service** | NestJS | MongoDB | 3002 | User & rent item management with event streaming |
+| **Search Service** | NestJS | MongoDB | 3003 | Product search with Swagger documentation |
+| **Bidding Service** | NestJS | Redis | 3004 | Real-time bidding with validation logic |
+| **Recommendation Service** | NestJS | Neo4j | 3005 | Graph-based product recommendations |
 
 ### Databases
 
@@ -35,19 +35,6 @@ This platform follows a microservices architecture with **6 independent services
 - **MongoDB** (2 databases): User registration + Product catalog
 - **Neo4j**: Graph database for recommendations
 - **Kafka + Zookeeper**: Event streaming for inter-service communication
-
-## Features
-
-- ✅ **Polyglot Persistence**: Right database for each use case
-- ✅ **Modern Tech Stack**: NestJS, React 18, TypeScript throughout
-- ✅ **Microservices Best Practices**: Independent deployments, fault isolation
-- ✅ **Event-Driven**: Kafka integration for asynchronous messaging
-- ✅ **Containerized**: Full Docker support with docker-compose
-- ✅ **Type-Safe**: TypeScript on both frontend and backend
-- ✅ **API Documentation**: Swagger UI for Search Service
-- ✅ **Bidding Logic**: Minimum bid validation, rental period checks
-- ✅ **Graph Recommendations**: Neo4j for relationship-based suggestions
-- ✅ **JWT Security**: Secure authentication with bcrypt password hashing
 
 ## Prerequisites
 
