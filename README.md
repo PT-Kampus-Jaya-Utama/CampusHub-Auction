@@ -1,10 +1,10 @@
-# E-Auction Microservices Platform
+# CampusHub Auction
 
-A fully refactored modern microservices-based e-auction platform built with **NestJS** (backend) and **React** (frontend), using a polyglot persistence architecture with containerized deployment.
+A microservices-based e-auction platform built with **NestJS** for backend and **React** for frontend, using a polyglot persistence architecture with containerized deployment.
 
 ## Product Description
 
-A rental-based e-auction platform that makes rare and antique items accessible to enthusiasts. This platform enables:
+ CampusHub Auction is a specialized auction platform designed to manage and auction unclaimed items found on campus. This platform enables:
 - **Product Owners**: List valuable items for auction with flexible rental periods
 - **Bidders**: Access rare items they couldn't otherwise afford
 - **Short-term Rentals**: Get products for specific durations without full purchase cost
