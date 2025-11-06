@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom'
 import {
   AppBar,
   Toolbar,
-  Typography,
   Button,
   Box,
   TextField,
@@ -17,6 +16,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle'
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown'
 import useAuthStore from '../store/authStore'
+import logo from '../assets/logo/logo.svg'
 
 const Header = () => {
   const navigate = useNavigate()
@@ -58,20 +58,36 @@ const Header = () => {
   }
 
   return (
-    <AppBar position="static">
-      <Toolbar sx={{ gap: 2 }}>
-        {/* Logo */}
-        <Typography
-          variant="h5"
-          component="div"
-          sx={{ fontWeight: 700, cursor: 'pointer', minWidth: '150px' }}
-          onClick={() => navigate('/landing')}
-        >
-          StackBid
-        </Typography>
+    <AppBar
+      position="static"
+      elevation={0}
+      sx={{
+        backgroundColor: 'rgba(255, 255, 255, 0.8)',
+        backdropFilter: 'blur(20px)',
+        color: 'primary.main',
+      }}
+    >
+      <Toolbar sx={{ py: 1, justifyContent: 'space-between', gap: 2 }}>
+        {/* Left Section: Logo */}
+        <Box sx={{ display: 'flex', alignItems: 'center', minWidth: 200 }}>
+          <Box
+            component="img"
+            src={logo}
+            alt="CampusHub Auction"
+            sx={{
+              height: 40,
+              cursor: 'pointer',
+              transition: 'transform 0.3s ease-in-out',
+              '&:hover': {
+                transform: 'scale(1.02)',
+              }
+            }}
+            onClick={() => navigate('/landing')}
+          />
+        </Box>
 
-        {/* Search Bar */}
-        <Box sx={{ flexGrow: 1, maxWidth: '500px' }}>
+        {/* Center Section: Search Bar */}
+        <Box sx={{ flexGrow: 1, maxWidth: '600px', px: 2 }}>
           <TextField
             size="small"
             fullWidth
@@ -81,61 +97,201 @@ const Header = () => {
             InputProps={{
               endAdornment: (
                 <InputAdornment position="end">
-                  <IconButton edge="end">
+                  <IconButton edge="end" sx={{ color: 'text.secondary' }}>
                     <SearchIcon />
                   </IconButton>
                 </InputAdornment>
               ),
-              sx: { backgroundColor: 'white', borderRadius: 1 },
+              sx: {
+                backgroundColor: '#EAF4FF',
+                borderRadius: 3,
+                border: '1px solid rgba(0, 50, 102, 0.08)',
+                transition: 'all 0.3s ease-in-out',
+                '&:hover': {
+                  backgroundColor: '#d4e8ff',
+                  border: '1px solid rgba(0, 50, 102, 0.12)',
+                },
+                '& fieldset': {
+                  border: 'none',
+                },
+              },
             }}
           />
         </Box>
 
-        {/* Categories */}
-        <Button
-          color="inherit"
-          endIcon={<ArrowDropDownIcon />}
-          onClick={handleCategoryClick}
-        >
-          Categories
-        </Button>
-        <Menu
+        {/* Right Section: Navigation Items */}
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, minWidth: 200, justifyContent: 'flex-end' }}>
+          {/* Categories */}
+          <Button
+            sx={{
+              color: 'primary.main',
+              fontWeight: 600,
+              px: 2,
+              '&:hover': {
+                backgroundColor: 'rgba(0, 50, 102, 0.04)',
+              }
+            }}
+            endIcon={<ArrowDropDownIcon />}
+            onClick={handleCategoryClick}
+          >
+            Categories
+          </Button>
+          <Menu
           anchorEl={categoryAnchor}
           open={Boolean(categoryAnchor)}
           onClose={handleCategoryClose}
+          slotProps={{
+            paper: {
+              sx: {
+                mt: 1,
+                borderRadius: 3,
+                boxShadow: '0 8px 24px rgba(0, 50, 102, 0.12)',
+                border: '1px solid rgba(0, 50, 102, 0.06)',
+              }
+            }
+          }}
         >
-          <MenuItem onClick={handleCategoryClose}>Car & Bike</MenuItem>
-          <MenuItem onClick={handleCategoryClose}>Jewellery</MenuItem>
-          <MenuItem onClick={handleCategoryClose}>Artifacts</MenuItem>
-          <MenuItem onClick={handleCategoryClose}>Electronics</MenuItem>
+          <MenuItem
+            onClick={handleCategoryClose}
+            sx={{
+              borderRadius: 2,
+              mx: 1,
+              my: 0.5,
+              '&:hover': { backgroundColor: '#EAF4FF' }
+            }}
+          >
+            Car & Bike
+          </MenuItem>
+          <MenuItem
+            onClick={handleCategoryClose}
+            sx={{
+              borderRadius: 2,
+              mx: 1,
+              my: 0.5,
+              '&:hover': { backgroundColor: '#EAF4FF' }
+            }}
+          >
+            Jewellery
+          </MenuItem>
+          <MenuItem
+            onClick={handleCategoryClose}
+            sx={{
+              borderRadius: 2,
+              mx: 1,
+              my: 0.5,
+              '&:hover': { backgroundColor: '#EAF4FF' }
+            }}
+          >
+            Artifacts
+          </MenuItem>
+          <MenuItem
+            onClick={handleCategoryClose}
+            sx={{
+              borderRadius: 2,
+              mx: 1,
+              my: 0.5,
+              '&:hover': { backgroundColor: '#EAF4FF' }
+            }}
+          >
+            Electronics
+          </MenuItem>
         </Menu>
 
-        {/* Wishlist */}
-        <IconButton color="inherit" onClick={() => navigate('/favs')}>
-          <FavoriteIcon />
-        </IconButton>
+          {/* Wishlist */}
+          <IconButton
+            sx={{
+              color: 'primary.main',
+              '&:hover': {
+                backgroundColor: 'rgba(0, 50, 102, 0.04)',
+                color: 'info.main',
+              }
+            }}
+            onClick={() => navigate('/favs')}
+          >
+            <FavoriteIcon />
+          </IconButton>
 
-        {/* HelpDesk */}
-        <Button color="inherit" onClick={() => navigate('/helpdesk')}>
-          HelpDesk
-        </Button>
+          {/* HelpDesk */}
+          <Button
+            sx={{
+              color: 'primary.main',
+              fontWeight: 600,
+              px: 2,
+              '&:hover': {
+                backgroundColor: 'rgba(0, 50, 102, 0.04)',
+              }
+            }}
+            onClick={() => navigate('/helpdesk')}
+          >
+            HelpDesk
+          </Button>
 
-        {/* User Menu */}
-        <IconButton color="inherit" onClick={handleUserClick}>
-          <AccountCircleIcon />
-        </IconButton>
-        <Menu anchorEl={userAnchor} open={Boolean(userAnchor)} onClose={handleUserClose}>
-          <MenuItem onClick={handleUserClose}>My Account</MenuItem>
+          {/* User Menu */}
+          <IconButton
+            sx={{
+              color: 'primary.main',
+              '&:hover': {
+                backgroundColor: 'rgba(0, 50, 102, 0.04)',
+              }
+            }}
+            onClick={handleUserClick}
+          >
+            <AccountCircleIcon />
+          </IconButton>
+        <Menu
+          anchorEl={userAnchor}
+          open={Boolean(userAnchor)}
+          onClose={handleUserClose}
+          slotProps={{
+            paper: {
+              sx: {
+                mt: 1,
+                borderRadius: 3,
+                boxShadow: '0 8px 24px rgba(0, 50, 102, 0.12)',
+                border: '1px solid rgba(0, 50, 102, 0.06)',
+              }
+            }
+          }}
+        >
+          <MenuItem
+            onClick={handleUserClose}
+            sx={{
+              borderRadius: 2,
+              mx: 1,
+              my: 0.5,
+              '&:hover': { backgroundColor: '#EAF4FF' }
+            }}
+          >
+            My Account
+          </MenuItem>
           <MenuItem
             onClick={() => {
               navigate('/rentItems')
               handleUserClose()
             }}
+            sx={{
+              borderRadius: 2,
+              mx: 1,
+              my: 0.5,
+              '&:hover': { backgroundColor: '#EAF4FF' }
+            }}
           >
             Rent Items
           </MenuItem>
-          <MenuItem onClick={handleLogout}>Logout</MenuItem>
-        </Menu>
+          <MenuItem
+            onClick={handleLogout}
+            sx={{
+              borderRadius: 2,
+              mx: 1,
+              my: 0.5,
+              color: 'error.main',
+              '&:hover': { backgroundColor: 'rgba(211, 47, 47, 0.08)' }
+            }}
+          >
+            Logout
+          </MenuItem>
+          </Menu>
+        </Box>
       </Toolbar>
     </AppBar>
   )

@@ -41,18 +41,33 @@ const HelpDesk = () => {
   return (
     <>
       <Header />
-      <Container maxWidth="md" sx={{ my: 4 }}>
-        <Card>
-          <CardContent sx={{ p: 4 }}>
-            <Typography variant="h4" gutterBottom color="primary">
+      <Container maxWidth="md" sx={{ my: 6 }}>
+        <Card
+          sx={{
+            boxShadow: '0 12px 32px rgba(0, 50, 102, 0.08)',
+          }}
+        >
+          <CardContent sx={{ p: 5 }}>
+            <Typography
+              variant="h3"
+              gutterBottom
+              color="primary"
+              sx={{ fontWeight: 700, mb: 2 }}
+            >
               Help Desk
             </Typography>
-            <Typography variant="body1" color="text.secondary" sx={{ mb: 3 }}>
+            <Typography variant="body1" color="text.secondary" sx={{ mb: 4 }}>
               We're here to help! Send us a message and we'll get back to you soon.
             </Typography>
 
             {showSuccess && (
-              <Alert severity="success" sx={{ mb: 2 }}>
+              <Alert
+                severity="success"
+                sx={{
+                  mb: 3,
+                  borderRadius: 3,
+                }}
+              >
                 We will get back to you soon. Thank You!
               </Alert>
             )}
@@ -117,7 +132,19 @@ const HelpDesk = () => {
                 inputProps={{ maxLength: 256 }}
               />
 
-              <Button type="submit" fullWidth variant="contained" sx={{ mt: 3 }}>
+              <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                size="large"
+                sx={{
+                  mt: 4,
+                  background: 'linear-gradient(135deg, #003266 0%, #1a4d7a 100%)',
+                  '&:hover': {
+                    background: 'linear-gradient(135deg, #002147 0%, #003266 100%)',
+                  },
+                }}
+              >
                 Submit
               </Button>
             </Box>

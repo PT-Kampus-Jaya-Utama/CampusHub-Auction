@@ -1,0 +1,8 @@
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Placeholder image with brand colors -->
+  <rect width="400" height="300" fill="#EAF4FF"/>
+  <circle cx="200" cy="120" r="40" fill="#027FFF" opacity="0.2"/>
+  <rect x="140" y="180" width="120" height="8" rx="4" fill="#003266" opacity="0.3"/>
+  <rect x="160" y="200" width="80" height="6" rx="3" fill="#003266" opacity="0.2"/>
+  <text x="200" y="250" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="500" fill="#003266" text-anchor="middle" opacity="0.5">Image Placeholder</text>
+</svg>

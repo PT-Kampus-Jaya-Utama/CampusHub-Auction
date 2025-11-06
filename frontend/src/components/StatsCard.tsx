@@ -11,25 +11,25 @@ const StatsCard = () => {
       value: '110M',
     },
     {
-      icon: <PeopleIcon sx={{ fontSize: 40, color: 'secondary.main' }} />,
+      icon: <PeopleIcon sx={{ fontSize: 40, color: 'info.main' }} />,
       label: 'Female Users',
       value: '40M',
     },
     {
-      icon: <GavelIcon sx={{ fontSize: 40, color: 'primary.dark' }} />,
+      icon: <GavelIcon sx={{ fontSize: 40, color: 'primary.main' }} />,
       label: 'Total Bids',
       value: '1 Billion+',
     },
     {
-      icon: <AttachMoneyIcon sx={{ fontSize: 40, color: 'success.main' }} />,
+      icon: <AttachMoneyIcon sx={{ fontSize: 40, color: 'info.main' }} />,
       label: 'Total Value',
       value: '$500M',
     },
   ]
 
   return (
-    <Box sx={{ py: 4 }}>
-      <Grid container spacing={3}>
+    <Box sx={{ py: 6 }}>
+      <Grid container spacing={4}>
         {stats.map((stat, index) => (
           <Grid item xs={12} sm={6} md={3} key={index}>
             <Card
@@ -37,19 +37,36 @@ const StatsCard = () => {
                 height: '100%',
                 display: 'flex',
                 alignItems: 'center',
-                transition: 'transform 0.3s',
+                background: 'linear-gradient(135deg, #ffffff 0%, #EAF4FF 100%)',
+                transition: 'all 0.3s ease-in-out',
                 '&:hover': {
-                  transform: 'translateY(-4px)',
-                  boxShadow: 4,
+                  transform: 'scale(1.02)',
+                  boxShadow: '0 12px 32px rgba(0, 50, 102, 0.12)',
                 },
               }}
             >
-              <CardContent sx={{ textAlign: 'center', width: '100%' }}>
-                <Box sx={{ mb: 2 }}>{stat.icon}</Box>
-                <Typography variant="h4" component="div" fontWeight="bold" color="primary">
+              <CardContent sx={{ textAlign: 'center', width: '100%', py: 4 }}>
+                <Box
+                  sx={{
+                    mb: 2,
+                    display: 'inline-flex',
+                    p: 2,
+                    borderRadius: 3,
+                    backgroundColor: 'rgba(0, 50, 102, 0.04)',
+                  }}
+                >
+                  {stat.icon}
+                </Box>
+                <Typography
+                  variant="h3"
+                  component="div"
+                  fontWeight="700"
+                  color="primary"
+                  sx={{ mb: 1 }}
+                >
                   {stat.value}
                 </Typography>
-                <Typography variant="body1" color="text.secondary">
+                <Typography variant="body1" color="text.secondary" fontWeight="500">
                   {stat.label}
                 </Typography>
               </CardContent>

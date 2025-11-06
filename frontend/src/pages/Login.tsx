@@ -16,6 +16,7 @@ import VisibilityIcon from '@mui/icons-material/Visibility'
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff'
 import { authService } from '../services/authService'
 import useAuthStore from '../store/authStore'
+import logo from '../assets/logo/logo.svg'
 
 const Login = () => {
   const navigate = useNavigate()
@@ -49,18 +50,48 @@ const Login = () => {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: 'background.default',
+        background: 'linear-gradient(135deg, #EAF4FF 0%, #ffffff 50%, #EAF4FF 100%)',
       }}
     >
       <Container maxWidth="sm">
-        <Card>
-          <CardContent sx={{ p: 4 }}>
-            <Typography variant="h4" component="h1" gutterBottom align="center" color="primary">
-              Login to StackBid
+        <Card
+          sx={{
+            boxShadow: '0 20px 60px rgba(0, 50, 102, 0.12)',
+          }}
+        >
+          <CardContent sx={{ p: 5 }}>
+            <Box sx={{ display: 'flex', justifyContent: 'center', mb: 3 }}>
+              <Box
+                component="img"
+                src={logo}
+                alt="CampusHub Auction"
+                sx={{
+                  height: 50,
+                  cursor: 'pointer',
+                }}
+                onClick={() => navigate('/')}
+              />
+            </Box>
+
+            <Typography
+              variant="h4"
+              component="h1"
+              gutterBottom
+              align="center"
+              color="primary"
+              sx={{ fontWeight: 700, mb: 4 }}
+            >
+              Welcome Back
             </Typography>
 
             {invalidLogin && (
-              <Alert severity="error" sx={{ mb: 2 }}>
+              <Alert
+                severity="error"
+                sx={{
+                  mb: 3,
+                  borderRadius: 3,
+                }}
+              >
                 Invalid email or password
               </Alert>
             )}
@@ -77,6 +108,7 @@ const Login = () => {
                 autoFocus
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
+                sx={{ mb: 2 }}
               />
               <TextField
                 margin="normal"
@@ -95,6 +127,12 @@ const Login = () => {
                       <IconButton
                         onClick={() => setShowPassword(!showPassword)}
                         edge="end"
+                        sx={{
+                          color: 'text.secondary',
+                          '&:hover': {
+                            color: 'primary.main',
+                          },
+                        }}
                       >
                         {showPassword ? <VisibilityOffIcon /> : <VisibilityIcon />}
                       </IconButton>
@@ -106,16 +144,51 @@ const Login = () => {
                 type="submit"
                 fullWidth
                 variant="contained"
-                sx={{ mt: 3, mb: 2 }}
+                size="large"
+                sx={{
+                  mt: 4,
+                  mb: 2,
+                  background: 'linear-gradient(135deg, #003266 0%, #1a4d7a 100%)',
+                  '&:hover': {
+                    background: 'linear-gradient(135deg, #002147 0%, #003266 100%)',
+                  },
+                }}
                 disabled={loading}
               >
                 {loading ? 'Logging in...' : 'Login'}
               </Button>
-              <Box sx={{ display: 'flex', justifyContent: 'space-between', mt: 2 }}>
-                <Button onClick={() => navigate('/forgot')} variant="text">
+              <Box
+                sx={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  mt: 2,
+                  flexWrap: 'wrap',
+                  gap: 1,
+                }}
+              >
+                <Button
+                  onClick={() => navigate('/forgot')}
+                  sx={{
+                    color: 'text.secondary',
+                    '&:hover': {
+                      color: 'primary.main',
+                      backgroundColor: 'rgba(0, 50, 102, 0.04)',
+                    },
+                  }}
+                >
                   Forgot Password?
                 </Button>
-                <Button onClick={() => navigate('/registration')} variant="text">
+                <Button
+                  onClick={() => navigate('/registration')}
+                  sx={{
+                    color: 'info.main',
+                    fontWeight: 600,
+                    '&:hover': {
+                      color: 'primary.main',
+                      backgroundColor: 'rgba(0, 50, 102, 0.04)',
+                    },
+                  }}
+                >
                   Create new Account
                 </Button>
               </Box>

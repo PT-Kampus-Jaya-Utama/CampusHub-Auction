@@ -48,15 +48,33 @@ const RentItems = () => {
   return (
     <>
       <Header />
-      <Container maxWidth="md" sx={{ my: 4 }}>
-        <Card>
-          <CardContent sx={{ p: 4 }}>
-            <Typography variant="h4" gutterBottom color="primary">
+      <Container maxWidth="md" sx={{ my: 6 }}>
+        <Card
+          sx={{
+            boxShadow: '0 12px 32px rgba(0, 50, 102, 0.08)',
+          }}
+        >
+          <CardContent sx={{ p: 5 }}>
+            <Typography
+              variant="h3"
+              gutterBottom
+              color="primary"
+              sx={{ fontWeight: 700, mb: 2 }}
+            >
               List Item for Rent
+            </Typography>
+            <Typography variant="body1" color="text.secondary" sx={{ mb: 4 }}>
+              Fill out the details below to list your item for rent
             </Typography>
 
             {showSuccess && (
-              <Alert severity="success" sx={{ mb: 2 }}>
+              <Alert
+                severity="success"
+                sx={{
+                  mb: 3,
+                  borderRadius: 3,
+                }}
+              >
                 Item listed successfully!
               </Alert>
             )}
@@ -122,15 +140,46 @@ const RentItems = () => {
                 onChange={handleChange}
               />
               <Box sx={{ mt: 3, display: 'flex', gap: 2 }}>
-                <Button variant="outlined" component="label" fullWidth>
+                <Button
+                  variant="outlined"
+                  component="label"
+                  fullWidth
+                  sx={{
+                    borderWidth: '2px',
+                    '&:hover': {
+                      borderWidth: '2px',
+                    },
+                  }}
+                >
                   Choose File
                   <input type="file" hidden />
                 </Button>
-                <Button variant="outlined" fullWidth>
+                <Button
+                  variant="outlined"
+                  fullWidth
+                  sx={{
+                    borderWidth: '2px',
+                    '&:hover': {
+                      borderWidth: '2px',
+                    },
+                  }}
+                >
                   Upload File
                 </Button>
               </Box>
-              <Button type="submit" fullWidth variant="contained" sx={{ mt: 3 }}>
+              <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                size="large"
+                sx={{
+                  mt: 4,
+                  background: 'linear-gradient(135deg, #003266 0%, #1a4d7a 100%)',
+                  '&:hover': {
+                    background: 'linear-gradient(135deg, #002147 0%, #003266 100%)',
+                  },
+                }}
+              >
                 Confirm And Rent
               </Button>
             </Box>

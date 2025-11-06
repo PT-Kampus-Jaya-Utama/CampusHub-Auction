@@ -26,6 +26,7 @@ import VisibilityIcon from '@mui/icons-material/Visibility'
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff'
 import { registrationService } from '../services/registrationService'
 import { IUser } from '../types'
+import logo from '../assets/logo/logo.svg'
 
 const CATEGORIES = ['Electronics', 'Car & Bike', 'Fashion', 'Antique', 'Artifacts', 'Jewellery']
 
@@ -102,19 +103,49 @@ const Registration = () => {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: 'background.default',
-        py: 4,
+        background: 'linear-gradient(135deg, #EAF4FF 0%, #ffffff 50%, #EAF4FF 100%)',
+        py: 6,
       }}
     >
       <Container maxWidth="md">
-        <Card>
-          <CardContent sx={{ p: 4 }}>
-            <Typography variant="h4" component="h1" gutterBottom align="center" color="primary">
+        <Card
+          sx={{
+            boxShadow: '0 20px 60px rgba(0, 50, 102, 0.12)',
+          }}
+        >
+          <CardContent sx={{ p: 5 }}>
+            <Box sx={{ display: 'flex', justifyContent: 'center', mb: 3 }}>
+              <Box
+                component="img"
+                src={logo}
+                alt="CampusHub Auction"
+                sx={{
+                  height: 50,
+                  cursor: 'pointer',
+                }}
+                onClick={() => navigate('/')}
+              />
+            </Box>
+
+            <Typography
+              variant="h4"
+              component="h1"
+              gutterBottom
+              align="center"
+              color="primary"
+              sx={{ fontWeight: 700, mb: 4 }}
+            >
               Create Account
             </Typography>
 
             {error && (
-              <Alert severity="error" sx={{ mb: 2 }}>
+              <Alert
+                severity="error"
+                sx={{
+                  mb: 3,
+                  borderRadius: 3,
+                }}
+              >
                 {error}
               </Alert>
             )}
@@ -222,12 +253,31 @@ const Registration = () => {
                 type="submit"
                 fullWidth
                 variant="contained"
-                sx={{ mt: 3, mb: 2 }}
+                size="large"
+                sx={{
+                  mt: 4,
+                  mb: 2,
+                  background: 'linear-gradient(135deg, #003266 0%, #1a4d7a 100%)',
+                  '&:hover': {
+                    background: 'linear-gradient(135deg, #002147 0%, #003266 100%)',
+                  },
+                }}
                 disabled={loading}
               >
                 {loading ? 'Creating Account...' : 'Submit'}
               </Button>
-              <Button fullWidth onClick={() => navigate('/login')} variant="outlined">
+              <Button
+                fullWidth
+                onClick={() => navigate('/login')}
+                variant="outlined"
+                size="large"
+                sx={{
+                  borderWidth: '2px',
+                  '&:hover': {
+                    borderWidth: '2px',
+                  },
+                }}
+              >
                 Already have an account? Login
               </Button>
             </Box>
