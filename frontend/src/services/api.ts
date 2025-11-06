@@ -1,15 +1,13 @@
 import axios from 'axios'
 
-// API Base URLs - update these to match your microservices
 const API_CONFIG = {
-  AUTH_SERVICE: 'http://localhost:3001',
-  REGISTRATION_SERVICE: 'http://localhost:3002',
-  SEARCH_SERVICE: 'http://localhost:3003',
-  BIDDING_SERVICE: 'http://localhost:3004',
-  RECOMMENDATION_SERVICE: 'http://localhost:3005',
+  AUTH_SERVICE: import.meta.env.VITE_AUTH_SERVICE || 'http://localhost:3001',
+  REGISTRATION_SERVICE: import.meta.env.VITE_REGISTRATION_SERVICE || 'http://localhost:3002',
+  SEARCH_SERVICE: import.meta.env.VITE_SEARCH_SERVICE || 'http://localhost:3003',
+  BIDDING_SERVICE: import.meta.env.VITE_BIDDING_SERVICE || 'http://localhost:3004',
+  RECOMMENDATION_SERVICE: import.meta.env.VITE_RECOMMENDATION_SERVICE || 'http://localhost:3005',
 }
 
-// Create axios instances for each service
 export const authApi = axios.create({
   baseURL: API_CONFIG.AUTH_SERVICE,
   headers: {
