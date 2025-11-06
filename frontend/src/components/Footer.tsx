@@ -181,7 +181,7 @@ const Footer = () => {
             fontWeight: 500,
           }}
         >
-          © 2025 CampusHub Auction | Developed with ❤️ @StackRoute
+          © 2025 PT Kampus Jaya Utama
         </Typography>
       </Container>
     </Box>

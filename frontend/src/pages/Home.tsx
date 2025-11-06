@@ -2,7 +2,6 @@ import { Container, Box, Typography, Button } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
 import BeforeLoginHeader from '../components/BeforeLoginHeader'
 import StatsCard from '../components/StatsCard'
-import logo from '../assets/logo/logo.svg'
 
 const Home = () => {
   const navigate = useNavigate()
@@ -21,16 +20,6 @@ const Home = () => {
       >
         <Container maxWidth="lg">
           <Box sx={{ textAlign: 'center' }}>
-            <Box
-              component="img"
-              src={logo}
-              alt="CampusHub Auction"
-              sx={{
-                height: 80,
-                mb: 4,
-                filter: 'drop-shadow(0 4px 12px rgba(0, 50, 102, 0.1))',
-              }}
-            />
             <Typography
               variant="h2"
               component="h1"
