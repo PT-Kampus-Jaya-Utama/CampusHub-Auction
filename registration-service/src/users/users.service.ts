@@ -77,7 +77,7 @@ export class UsersService {
     return { message: 'User deleted successfully' }
   }
 
-  async getUserByEmail(email: string): Promise<User> {
+  async getUserByEmail(email: string): Promise<UserDocument> {
     const user = await this.userModel.findOne({ userEmail: email })
 
     if (!user) {

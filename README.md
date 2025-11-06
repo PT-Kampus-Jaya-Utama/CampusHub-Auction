@@ -95,7 +95,7 @@ This will:
   - **Swagger Docs**: http://localhost:3003/api
 - **Bidding Service**: http://localhost:3004
 - **Recommendation Service**: http://localhost:3005
-- **Neo4j Browser**: http://localhost:7474 (neo4j/799124)
+- **Neo4j Browser**: http://localhost:7474 (neo4j/AkuCintaNoSQL799124)
 
 ## Development Setup
 
@@ -289,7 +289,7 @@ docker-compose logs <service-name>
 Kafka requires Zookeeper. Ensure Zookeeper is healthy first.
 
 ### Neo4j Connection Failed
-Default credentials: `neo4j/799124`. Change if modified.
+Default credentials: `neo4j/AkuCintaNoSQL799124`. Change if modified.
 
 ## Support
 

@@ -14,7 +14,7 @@ export class RecommendationsService implements OnModuleInit, OnModuleDestroy {
       this.configService.get('NEO4J_URI', 'bolt://localhost:7687'),
       neo4j.auth.basic(
         this.configService.get('NEO4J_USERNAME', 'neo4j'),
-        this.configService.get('NEO4J_PASSWORD', '799124')
+        this.configService.get('NEO4J_PASSWORD', 'AkuCintaNoSQL799124')
       )
     )
   }

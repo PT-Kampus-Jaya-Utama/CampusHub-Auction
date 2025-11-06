@@ -33,16 +33,17 @@ services:
       - "7474:7474"
       - "7687:7687"
     environment:
-      - NEO4J_AUTH=neo4j/799124
+      - NEO4J_AUTH=neo4j/AkuCintaNoSQL799124
       - NEO4J_dbms_memory_pagecache_size=512M
       - NEO4J_dbms_memory_heap_max__size=1G
     volumes:
       - neo4j-data:/data
     healthcheck:
-      test: ["CMD", "cypher-shell", "-u", "neo4j", "-p", "799124", "RETURN 1"]
+      test: ["CMD-SHELL", "wget --no-verbose --tries=1 --spider http://localhost:7474 || exit 1"]
       interval: 10s
       timeout: 5s
       retries: 5
+      start_period: 40s
 
   zookeeper:
     image: confluentinc/cp-zookeeper:7.5.0
@@ -164,7 +165,7 @@ services:
       - PORT=3005
       - NEO4J_URI=bolt://neo4j:7687
       - NEO4J_USERNAME=neo4j
-      - NEO4J_PASSWORD=799124
+      - NEO4J_PASSWORD=AkuCintaNoSQL799124
       - CORS_ORIGIN=http://localhost
     depends_on:
       neo4j:
