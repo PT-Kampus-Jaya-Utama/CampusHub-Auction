@@ -45,7 +45,7 @@ const BeforeLoginHeader = () => {
         color: 'primary.main',
       }}
     >
-      <Toolbar sx={{ py: 1, justifyContent: 'space-between', gap: 2 }}>
+      <Toolbar sx={{ py: 1.5, justifyContent: 'space-between', gap: 2 }}>
         {/* Left Section: Logo */}
         <Box sx={{ display: 'flex', alignItems: 'center', minWidth: 200 }}>
           <Box
@@ -53,7 +53,7 @@ const BeforeLoginHeader = () => {
             src={logo}
             alt="CampusHub Auction"
             sx={{
-              height: 40,
+              height: 32,
               cursor: 'pointer',
               transition: 'transform 0.3s ease-in-out',
               '&:hover': {
